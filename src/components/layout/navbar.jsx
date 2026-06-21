@@ -35,9 +35,8 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center shrink-0">
-          <span className="font-display text-2xl md:text-3xl text-ink tracking-wide font-bold">
-            BIBLIO
-          </span>
+          <span className="font-display text-2xl md:text-3xl text-ink tracking-wide font-bold">Boi</span>
+          <span className="font-display text-2xl md:text-3xl text-volt tracking-wide font-bold">Ghor</span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-8">

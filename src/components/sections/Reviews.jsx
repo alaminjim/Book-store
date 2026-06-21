@@ -11,7 +11,7 @@ export default function Reviews() {
       id: 2,
       name: "Sophia Loren",
       role: "Literature Professor",
-      text: "Biblio is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. Excellent delivery packaging too.",
+      text: "BoiGhor is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. Excellent delivery packaging too.",
       rating: 5,
     },
     {

@@ -17,7 +17,7 @@ export default function Faq() {
     },
     {
       question: "How do I contact customer support?",
-      answer: "You can email us at support@biblio.com. We usually respond within 24 hours.",
+      answer: "You can email us at support@boighor.com. We usually respond within 24 hours.",
     },
   ];
 

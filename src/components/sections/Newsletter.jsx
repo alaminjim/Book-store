@@ -51,7 +51,7 @@ export default function Newsletter() {
 
           {subscribed && (
             <p className="text-xs text-volt font-medium animate-fade-in pt-1">
-              Thank you. You have been added to the Biblio list.
+              Thank you. You have been added to the BoiGhor list.
             </p>
           )}
         </div>

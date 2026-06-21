@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { FiCheck } from "react-icons/fi";
 import BOOKS from "../data/books";
@@ -44,7 +45,7 @@ export default function CategoryPage({ category, title, description }) {
                 key={book.id}
                 className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col"
               >
-                <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500">
+                <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500 block">
                   <img
                     src={book.image}
                     alt={book.title}
@@ -55,7 +56,7 @@ export default function CategoryPage({ category, title, description }) {
                       {book.tag}
                     </div>
                   )}
-                </div>
+                </Link>
 
                 <div className="flex flex-col flex-grow space-y-2">
                   <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink/40 font-bold">
@@ -65,9 +66,11 @@ export default function CategoryPage({ category, title, description }) {
                     </span>
                   </div>
 
-                  <h2 className="font-display text-xl uppercase font-bold text-ink group-hover:text-volt transition-colors leading-tight">
-                    {book.title}
-                  </h2>
+                  <Link to={`/product/${book.id}`}>
+                    <h2 className="font-display text-xl uppercase font-bold text-ink group-hover:text-volt transition-colors leading-tight">
+                      {book.title}
+                    </h2>
+                  </Link>
 
                   <p className="text-xs text-ink/50 italic font-light">
                     by {book.author}

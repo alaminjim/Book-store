@@ -10,9 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center">
-              <span className="font-display text-3xl text-bone tracking-wide font-bold">
-                BIBLIO
-              </span>
+              <span className="font-display text-3xl text-bone tracking-wide font-bold">Boi</span>
+              <span className="font-display text-3xl text-volt tracking-wide font-bold">Ghor</span>
             </Link>
             <p className="text-bone/60 max-w-sm text-sm font-light leading-relaxed">
               We curate literature that inspires, challenges, and endures. Our
@@ -111,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-bone/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-bone/40">
-          <p>© {year} BIBLIO All rights reserved.</p>
+          <p>© {year} BoiGhor. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-bone/80 transition-colors">
               Privacy

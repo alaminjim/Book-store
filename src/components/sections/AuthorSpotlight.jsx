@@ -25,7 +25,7 @@ export default function AuthorSpotlight() {
             Elena Rostova
           </h2>
           <p className="text-sm text-ink/75 font-light leading-relaxed">
-            Elena Rostova is a novelist based in Prague. Her latest book, <em className="font-serif italic font-medium">The Silent Echo</em>, is currently a staff favorite at Biblio.
+            Elena Rostova is a novelist based in Prague. Her latest book, <em className="font-serif italic font-medium">The Silent Echo</em>, is currently a staff favorite at BoiGhor.
           </p>
           <blockquote className="border-l-2 border-volt pl-4 italic text-sm text-ink/65 font-light">
             "Writing is a way of asking questions that don't always have easy answers."

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { FiArrowRight, FiFeather, FiCheck } from "react-icons/fi";
 
@@ -57,7 +58,7 @@ export default function Hero({ spotlightBook }) {
                 <div className="absolute -inset-4 bg-ink/5 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
 
                 <div className="relative bg-sand border border-ink/5 rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-2">
-                  <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mb-6">
+                  <Link to={`/product/${spotlightBook.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mb-6 block">
                     <img
                       src={spotlightBook.image}
                       alt={spotlightBook.title}
@@ -66,14 +67,16 @@ export default function Hero({ spotlightBook }) {
                     <div className="absolute top-3 left-3 bg-ink text-bone text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
                       Featured Pick
                     </div>
-                  </div>
+                  </Link>
 
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] uppercase tracking-widest text-ink/50 font-bold">{spotlightBook.category}</span>
                       <span className="font-display text-lg font-bold text-volt">${spotlightBook.price.toFixed(2)}</span>
                     </div>
-                    <h3 className="font-display text-xl font-bold uppercase leading-tight">{spotlightBook.title}</h3>
+                    <Link to={`/product/${spotlightBook.id}`}>
+                      <h3 className="font-display text-xl font-bold uppercase leading-tight hover:text-volt transition-colors">{spotlightBook.title}</h3>
+                    </Link>
                     <p className="text-xs text-ink/60 font-light line-clamp-2">{spotlightBook.desc}</p>
                     <button
                       onClick={handleAddToCart}

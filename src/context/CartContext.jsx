@@ -6,7 +6,7 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState(() => {
     try {
-      const saved = localStorage.getItem("biblio_cart");
+      const saved = localStorage.getItem("boighor_cart");
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -14,20 +14,18 @@ export function CartProvider({ children }) {
   });
 
   useEffect(() => {
-    localStorage.setItem("biblio_cart", JSON.stringify(cartItems));
+    localStorage.setItem("boighor_cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (product) => {
+  const addToCart = (product, qty = 1) => {
     setCartItems((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item,
+          item.id === product.id ? { ...item, quantity: item.quantity + qty } : item
         );
       }
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev, { ...product, quantity: qty }];
     });
   };
 

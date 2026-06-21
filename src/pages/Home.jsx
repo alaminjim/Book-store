@@ -33,7 +33,6 @@ export default function Home() {
 
       <FeaturedCategories />
 
-      {/* Featured Products */}
       <section
         id="catalog"
         className="max-w-7xl mx-auto px-5 md:px-8 py-16 border-t border-ink/5"
@@ -73,7 +72,7 @@ export default function Home() {
               key={book.id}
               className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col h-full"
             >
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500">
+              <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500 block">
                 <img
                   src={book.image}
                   alt={book.title}
@@ -84,7 +83,7 @@ export default function Home() {
                     {book.tag}
                   </div>
                 )}
-              </div>
+              </Link>
 
               <div className="flex flex-col flex-grow space-y-2">
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink/40 font-bold">
@@ -94,9 +93,11 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h3 className="font-display text-xl uppercase font-bold text-ink group-hover:text-volt transition-colors leading-tight">
-                  {book.title}
-                </h3>
+                <Link to={`/product/${book.id}`}>
+                  <h3 className="font-display text-xl uppercase font-bold text-ink group-hover:text-volt transition-colors leading-tight">
+                    {book.title}
+                  </h3>
+                </Link>
 
                 <p className="text-xs text-ink/50 italic font-light">
                   by {book.author}

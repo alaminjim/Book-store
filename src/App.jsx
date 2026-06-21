@@ -5,14 +5,13 @@ import Footer from "./components/layout/footer";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import CategoryPage from "./pages/CategoryPage";
+import BookDetails from "./pages/BookDetails";
 
 function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen bg-bone">
       <Navbar />
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
@@ -36,6 +35,14 @@ export default function App() {
             element={
               <Layout>
                 <Cart />
+              </Layout>
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <Layout>
+                <BookDetails />
               </Layout>
             }
           />
