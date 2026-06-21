@@ -27,3 +27,30 @@ body {
 .animate-fade-in {
   animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.hero-swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bullet {
+  width: 20px;
+  height: 3px;
+  background-color: var(--color-ink);
+  opacity: 0.15;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 9999px;
+}
+
+.hero-bullet:hover {
+  opacity: 0.4;
+}
+
+.hero-bullet-active {
+  opacity: 1;
+  background-color: var(--color-volt);
+  width: 32px;
+}
+

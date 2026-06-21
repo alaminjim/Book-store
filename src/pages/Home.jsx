@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div className="bg-bone min-h-screen text-ink">
-      <Hero spotlightBook={BOOKS[0]} />
+      <Hero books={BOOKS.slice(0, 4)} />
 
       <FeaturedCategories />
 
