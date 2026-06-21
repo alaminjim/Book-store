@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import { FiGithub, FiTwitter, FiInstagram, FiHeart } from "react-icons/fi";
+import { FiGithub, FiTwitter, FiInstagram } from "react-icons/fi";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,9 +12,6 @@ export default function Footer() {
             <Link to="/" className="flex items-center">
               <span className="font-display text-3xl text-bone tracking-wide font-bold">
                 BIBLIO
-              </span>
-              <span className="font-display text-3xl text-volt tracking-wide font-black">
-                .
               </span>
             </Link>
             <p className="text-bone/60 max-w-sm text-sm font-light leading-relaxed">
@@ -55,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-light text-bone/70">
               <li>
                 <Link
-                  to="/?category=fiction"
+                  to="/fiction"
                   className="hover:text-volt transition-colors"
                 >
                   Fiction & Novels
@@ -63,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/?category=non-fiction"
+                  to="/non-fiction"
                   className="hover:text-volt transition-colors"
                 >
                   History & Essays
@@ -71,17 +67,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/?category=poetry"
+                  to="/poetry"
                   className="hover:text-volt transition-colors"
                 >
                   Poetry & Drama
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/?category=art"
-                  className="hover:text-volt transition-colors"
-                >
+                <Link to="/art" className="hover:text-volt transition-colors">
                   Art, Design & Photo
                 </Link>
               </li>

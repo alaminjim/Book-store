@@ -6,14 +6,14 @@ export default function Philosophy() {
     <section id="philosophy" className="bg-sand/40 py-20 border-y border-ink/5">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="max-w-xl mb-16 space-y-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-volt bg-volt/10 px-3 py-1 rounded-md">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
             Philosophy
           </span>
           <h2 className="font-display text-4xl uppercase tracking-wide leading-none">
-            A commitment to physical literature.
+            Why we love physical books.
           </h2>
           <p className="text-sm text-ink/60 font-light leading-relaxed">
-            We create spaces for readers who appreciate tactile craftsmanship, curated ideas, and design integrity.
+            We believe in the tactile experience of reading. Here is why we curate our books with care.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ export default function Philosophy() {
             </div>
             <h3 className="font-display text-xl uppercase tracking-wider font-bold">Curated Catalog</h3>
             <p className="text-xs text-ink/65 font-light leading-relaxed">
-              We ignore mass-market algorithms. Every book on our shelves has been read, debated, and approved by our team.
+              No algorithms here. Every book on our shelf is chosen and read by our team.
             </p>
           </div>
 
@@ -32,9 +32,9 @@ export default function Philosophy() {
             <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
               <HiOutlineBookmark className="text-lg" />
             </div>
-            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Bespoke Design</h3>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Great Design</h3>
             <p className="text-xs text-ink/65 font-light leading-relaxed">
-              We partner with visual artists to craft unique cover sleeves and print editions exclusive to our members.
+              We select books with unique cover art, quality paper, and beautiful bindings.
             </p>
           </div>
 
@@ -42,9 +42,9 @@ export default function Philosophy() {
             <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
               <FiFeather className="text-lg" />
             </div>
-            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Eco Curation</h3>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Eco Friendly</h3>
             <p className="text-xs text-ink/65 font-light leading-relaxed">
-              All physical volumes use FSC-certified recycled pulp, plant-derived ink binding, and plastic-free packaging.
+              We focus on publishers using recycled paper and eco-friendly printing methods.
             </p>
           </div>
 
@@ -52,9 +52,9 @@ export default function Philosophy() {
             <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
               <FiHeart className="text-lg" />
             </div>
-            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Literary Spaces</h3>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Community</h3>
             <p className="text-xs text-ink/65 font-light leading-relaxed">
-              10% of every purchase funds physical writing events, local reading spaces, and community zines globally.
+              A portion of our sales supports local library programs and independent writers.
             </p>
           </div>
         </div>

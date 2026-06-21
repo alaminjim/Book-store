@@ -23,12 +23,10 @@ export default function Newsletter() {
             Newsletter
           </span>
           <h2 className="font-display text-4xl sm:text-5xl uppercase tracking-wide leading-none">
-            Join the reading circle.
+            Subscribe to our newsletter.
           </h2>
           <p className="text-sm text-bone/60 font-light leading-relaxed max-w-lg">
-            Receive notes on our latest volume acquisitions, editorial
-            recommendations, interviews with independent publishers, and
-            notifications on exclusive member events.
+            Get weekly book recommendations, author spotlights, and updates on store events directly in your inbox.
           </p>
 
           <form

@@ -18,10 +18,10 @@ export default function CategoryPage({ category, title, description }) {
   return (
     <div className="bg-bone min-h-screen text-ink pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-
-        {/* Page Header */}
         <div className="mb-12 border-b border-ink/10 pb-10">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-volt">Collection</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
+            Collection
+          </span>
           <h1 className="font-display text-5xl md:text-6xl uppercase mt-2 tracking-tight leading-none">
             {title}
           </h1>
@@ -33,7 +33,6 @@ export default function CategoryPage({ category, title, description }) {
           </p>
         </div>
 
-        {/* Books Grid */}
         {books.length === 0 ? (
           <p className="text-center py-20 text-ink/40 text-sm font-light">
             No volumes found in this collection yet.
@@ -45,7 +44,6 @@ export default function CategoryPage({ category, title, description }) {
                 key={book.id}
                 className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col"
               >
-                {/* Book Cover */}
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500">
                   <img
                     src={book.image}
@@ -59,7 +57,6 @@ export default function CategoryPage({ category, title, description }) {
                   )}
                 </div>
 
-                {/* Book Info */}
                 <div className="flex flex-col flex-grow space-y-2">
                   <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink/40 font-bold">
                     <span>{book.category}</span>
@@ -72,7 +69,9 @@ export default function CategoryPage({ category, title, description }) {
                     {book.title}
                   </h2>
 
-                  <p className="text-xs text-ink/50 italic font-light">by {book.author}</p>
+                  <p className="text-xs text-ink/50 italic font-light">
+                    by {book.author}
+                  </p>
 
                   <p className="text-xs text-ink/65 font-light leading-relaxed line-clamp-3 pt-1 flex-grow">
                     {book.desc}
@@ -84,11 +83,11 @@ export default function CategoryPage({ category, title, description }) {
                   >
                     {addedId === book.id ? (
                       <>
-                        <FiCheck className="text-sm animate-pulse" />
-                        <span>Added to Archive</span>
+                        <FiCheck className="text-sm" />
+                        <span>Added to Cart</span>
                       </>
                     ) : (
-                      <span>Acquire Copy</span>
+                      <span>Add to Cart</span>
                     )}
                   </button>
                 </div>
@@ -96,7 +95,6 @@ export default function CategoryPage({ category, title, description }) {
             ))}
           </div>
         )}
-
       </div>
     </div>
   );

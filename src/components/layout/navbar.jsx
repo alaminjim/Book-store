@@ -20,9 +20,7 @@ export default function Navbar() {
   const { totalItems } = useCart();
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 12);
-    }
+    const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -36,14 +34,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
           <span className="font-display text-2xl md:text-3xl text-ink tracking-wide font-bold">
             BIBLIO
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
@@ -63,12 +59,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right actions */}
         <div className="flex items-center gap-4">
           <Link
             to="/cart"
             className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-ink/5 transition-colors"
-            aria-label="View cart"
           >
             <HiOutlineShoppingBag className="text-ink text-xl" />
             {totalItems > 0 && (
@@ -78,11 +72,9 @@ export default function Navbar() {
             )}
           </Link>
 
-          {/* Mobile menu toggle */}
           <button
             className="lg:hidden flex items-center justify-center w-10 h-10 text-ink"
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Toggle menu"
           >
             {menuOpen ? (
               <HiOutlineX className="text-2xl" />
@@ -93,7 +85,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-80 border-t border-ink/10" : "max-h-0"

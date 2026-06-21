@@ -46,7 +46,7 @@ export default function App() {
                 <CategoryPage
                   category="fiction"
                   title="Fiction"
-                  description="Immerse yourself in worlds crafted from imagination and truth. Our fiction collection spans literary novels, speculative futures, and intimate human portraits."
+                  description="Novels and stories from classic and contemporary writers."
                 />
               </Layout>
             }
@@ -58,7 +58,7 @@ export default function App() {
                 <CategoryPage
                   category="non-fiction"
                   title="Non-Fiction"
-                  description="Ideas that challenge, inform, and reshape how you see the world. Essays, histories, and intellectual works from the most rigorous thinkers of our time."
+                  description="History, essays, biography, and science books that explain the world."
                 />
               </Layout>
             }
@@ -70,7 +70,7 @@ export default function App() {
                 <CategoryPage
                   category="poetry"
                   title="Poetry"
-                  description="Language distilled to its most essential form. A curated archive of contemporary and classical verse that speaks to the margins of human experience."
+                  description="Collections of contemporary and classic poetry."
                 />
               </Layout>
             }
@@ -82,7 +82,7 @@ export default function App() {
                 <CategoryPage
                   category="art"
                   title="Art & Design"
-                  description="Monographs, design theory, and visual culture from the most influential artists, photographers, and designers of the last century."
+                  description="Design theory, monographs, architecture, and visual arts."
                 />
               </Layout>
             }
