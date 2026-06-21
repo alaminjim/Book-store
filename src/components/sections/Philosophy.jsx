@@ -1,0 +1,64 @@
+import { FiBookOpen, FiFeather, FiHeart } from "react-icons/fi";
+import { HiOutlineBookmark } from "react-icons/hi";
+
+export default function Philosophy() {
+  return (
+    <section id="philosophy" className="bg-sand/40 py-20 border-y border-ink/5">
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
+        <div className="max-w-xl mb-16 space-y-4">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-volt bg-volt/10 px-3 py-1 rounded-md">
+            Philosophy
+          </span>
+          <h2 className="font-display text-4xl uppercase tracking-wide leading-none">
+            A commitment to physical literature.
+          </h2>
+          <p className="text-sm text-ink/60 font-light leading-relaxed">
+            We create spaces for readers who appreciate tactile craftsmanship, curated ideas, and design integrity.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="bg-bone border border-ink/5 rounded-2xl p-6 space-y-4 hover:border-volt/30 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
+              <FiBookOpen className="text-lg" />
+            </div>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Curated Catalog</h3>
+            <p className="text-xs text-ink/65 font-light leading-relaxed">
+              We ignore mass-market algorithms. Every book on our shelves has been read, debated, and approved by our team.
+            </p>
+          </div>
+
+          <div className="bg-bone border border-ink/5 rounded-2xl p-6 space-y-4 hover:border-volt/30 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
+              <HiOutlineBookmark className="text-lg" />
+            </div>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Bespoke Design</h3>
+            <p className="text-xs text-ink/65 font-light leading-relaxed">
+              We partner with visual artists to craft unique cover sleeves and print editions exclusive to our members.
+            </p>
+          </div>
+
+          <div className="bg-bone border border-ink/5 rounded-2xl p-6 space-y-4 hover:border-volt/30 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
+              <FiFeather className="text-lg" />
+            </div>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Eco Curation</h3>
+            <p className="text-xs text-ink/65 font-light leading-relaxed">
+              All physical volumes use FSC-certified recycled pulp, plant-derived ink binding, and plastic-free packaging.
+            </p>
+          </div>
+
+          <div className="bg-bone border border-ink/5 rounded-2xl p-6 space-y-4 hover:border-volt/30 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
+              <FiHeart className="text-lg" />
+            </div>
+            <h3 className="font-display text-xl uppercase tracking-wider font-bold">Literary Spaces</h3>
+            <p className="text-xs text-ink/65 font-light leading-relaxed">
+              10% of every purchase funds physical writing events, local reading spaces, and community zines globally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
