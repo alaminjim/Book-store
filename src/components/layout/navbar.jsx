@@ -8,9 +8,9 @@ import {
 import { useCart } from "../../context/CartContext";
 
 const navLinks = [
+  { label: "All Books", to: "/books" },
   { label: "Fiction", to: "/fiction" },
   { label: "Non-Fiction", to: "/non-fiction" },
-  { label: "Poetry", to: "/poetry" },
   { label: "About", to: "/about" },
 ];
 

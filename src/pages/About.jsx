@@ -8,30 +8,6 @@ import {
   FiPackage,
 } from "react-icons/fi";
 
-const team = [
-  {
-    name: "Elena Rostova",
-    role: "Founder & Head Curator",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-    bio: "A lifelong reader and former literary editor, Elena started BoiGhor to preserve the tradition of independent bookselling.",
-  },
-  {
-    name: "Julian Vance",
-    role: "Poetry & Arts Editor",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    bio: "Julian brings over a decade of experience in literary criticism and runs our poetry and fine arts division.",
-  },
-  {
-    name: "Amara Diallo",
-    role: "Customer Experience Lead",
-    image:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
-    bio: "Amara ensures every reader's journey — from browsing to delivery — feels thoughtful and personal.",
-  },
-];
-
 const values = [
   {
     icon: <FiBookOpen />,
@@ -58,8 +34,8 @@ const values = [
 const stats = [
   { value: "1,200+", label: "Books Curated" },
   { value: "48", label: "Countries Served" },
-  { value: "12,000+", label: "Happy Readers" },
-  { value: "7", label: "Years in Print" },
+  { value: "8,500+", label: "Happy Readers" },
+  { value: "5", label: "Years in Dhaka" },
 ];
 
 const About = () => {
@@ -97,7 +73,7 @@ const About = () => {
       <section className="border-b border-ink/5">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat, i) => (
+            {stats.map((stat) => (
               <div
                 key={stat.label}
                 className="py-12 px-6 text-center border-r border-ink/5 last:border-r-0 even:border-r-0 lg:even:border-r"
@@ -127,7 +103,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-bone">
                   <span className="text-[10px] font-bold uppercase tracking-widest bg-volt text-ink px-2.5 py-1 rounded">
-                    Est. 2017 · Dhaka
+                    Est. 2019 · Dhanmondi, Dhaka
                   </span>
                 </div>
               </div>
@@ -140,11 +116,11 @@ const About = () => {
                 Preserving the art of reading, one shelf at a time.
               </h2>
               <p className="text-sm text-ink/70 font-light leading-relaxed">
-                In a world of digital noise and algorithmic recommendations, we
-                curate a quiet space for deliberate reading. We believe the
-                books you hold in your hands — the weight of the cover, the
-                smell of fresh paper — carry a kind of meaning that screens
-                cannot replicate.
+                In a city of 20 million people, we wanted one quiet corner
+                dedicated to books. BoiGhor started in a small shop in
+                Dhanmondi, and we've been hand-picking titles ever since. We
+                believe the books you hold — the weight of the cover, the smell
+                of fresh paper — carry meaning that screens cannot replicate.
               </p>
               <p className="text-sm text-ink/70 font-light leading-relaxed">
                 Every book we carry has been read, debated, and personally
@@ -196,48 +172,6 @@ const About = () => {
                 <p className="text-xs text-ink/65 font-light leading-relaxed">
                   {val.desc}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 border-b border-ink/5">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="mb-14">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
-              The People
-            </span>
-            <h2 className="font-display text-3xl uppercase tracking-wide mt-2">
-              Meet Our Team
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, i) => (
-              <div key={member.name} className="group">
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-sand mb-5">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className={`w-full h-full object-cover transition-all duration-500 ${
-                      i === 1
-                        ? "grayscale-0"
-                        : "grayscale group-hover:grayscale-0"
-                    }`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
-                </div>
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
-                    {member.role}
-                  </span>
-                  <h3 className="font-display text-xl uppercase font-bold">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs text-ink/65 font-light leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
               </div>
             ))}
           </div>

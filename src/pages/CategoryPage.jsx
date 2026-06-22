@@ -8,7 +8,7 @@ const CategoryPage = ({ category, title, description }) => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
-  const books = BOOKS.filter((book) => book.category === category);
+  const books = category === "all" ? BOOKS : BOOKS.filter((book) => book.category === category);
 
   const handleAddToCart = (book) => {
     addToCart(book);
@@ -63,7 +63,7 @@ const CategoryPage = ({ category, title, description }) => {
 
                 <div className="flex flex-col flex-grow space-y-2">
                   <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-ink/40 font-bold">
-                    <span>{book.category}</span>
+                    <span>{book.category.replace("-", " ")}</span>
                     <span className="text-volt font-display text-lg font-bold">
                       ${book.price.toFixed(2)}
                     </span>

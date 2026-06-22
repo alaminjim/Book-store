@@ -6,12 +6,12 @@ import BOOKS from "../data/books";
 import Hero from "../components/sections/Hero";
 import FeaturedCategories from "../components/sections/FeaturedCategories";
 import BestSellers from "../components/sections/BestSellers";
-import AuthorSpotlight from "../components/sections/AuthorSpotlight";
 import SpecialOffers from "../components/sections/SpecialOffers";
 import Reviews from "../components/sections/Reviews";
 import Faq from "../components/sections/Faq";
 import Philosophy from "../components/sections/Philosophy";
 import Newsletter from "../components/sections/Newsletter";
+import StaffPick from "../components/sections/StaffPick";
 
 const Home = () => {
   const { addToCart } = useCart();
@@ -129,7 +129,7 @@ const Home = () => {
 
       <BestSellers />
 
-      <AuthorSpotlight />
+      <StaffPick />
 
       <SpecialOffers />
 

@@ -65,6 +65,18 @@ const App = () => {
             }
           />
           <Route
+            path="/books"
+            element={
+              <Layout>
+                <CategoryPage
+                  category="all"
+                  title="All Books"
+                  description="Browse our complete archive of curated literature, design monographs, poetry, and essays."
+                />
+              </Layout>
+            }
+          />
+          <Route
             path="/fiction"
             element={
               <Layout>

@@ -16,15 +16,11 @@ const BookDetails = () => {
 
   const book = BOOKS.find((b) => b.id === parseInt(id));
 
-  // second and third gallery images are just placeholders until we get
-  // real alternate angles from the publisher
-  const galleryImages = book
-    ? [
-        book.image,
-        "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500&q=80",
-        "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=500&q=80",
-      ]
-    : [];
+  const galleryImages = book?.images?.length
+    ? book.images
+    : book
+      ? [book.image]
+      : [];
 
   useEffect(() => {
     if (book) {
@@ -113,7 +109,7 @@ const BookDetails = () => {
                 >
                   <img
                     src={img}
-                    alt="Preview"
+                    alt={`${book.title} - View ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </button>
