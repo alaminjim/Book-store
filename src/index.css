@@ -18,10 +18,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom fade-in and slide animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -53,4 +58,3 @@ body {
   background-color: var(--color-volt);
   width: 32px;
 }
-

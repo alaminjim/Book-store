@@ -1,25 +1,25 @@
-export default function Reviews() {
+const Reviews = () => {
   const reviews = [
     {
       id: 1,
       name: "Henry Cavil",
       role: "Verified Reader",
-      text: "The selection of books here is exquisite. I bought forms of space and the physical quality of the binding is top-notch. Highly recommended for collectors.",
+      text: "The selection here is exquisite. I bought Forms of Space and the binding quality is top-notch. Highly recommended for collectors.",
       rating: 5,
     },
     {
       id: 2,
       name: "Sophia Loren",
       role: "Literature Professor",
-      text: "BoiGhor is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. Excellent delivery packaging too.",
-      rating: 5,
+      text: "BoiGhor is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. My books arrived in perfect condition, wrapped with care. Rare to find this level of attention.",
+      rating: 4.5,
     },
     {
       id: 3,
       name: "David Kim",
       role: "Design Lead",
-      text: "A beautiful website that matches the tactile beauty of their physical volumes. Quick checkout and friendly support. Will definitely be ordering again.",
-      rating: 5,
+      text: "Beautiful website, quick checkout. Will order again.",
+      rating: 4,
     },
   ];
 
@@ -35,13 +35,20 @@ export default function Reviews() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {reviews.map((rev) => (
+        {reviews.map((rev, index) => (
           <div
             key={rev.id}
-            className="bg-white border border-ink/5 rounded-2xl p-6 md:p-8 space-y-4 hover:shadow-md transition-shadow"
+            className={`bg-white border border-ink/5 rounded-2xl space-y-4 hover:shadow-md transition-shadow ${
+              index === 1 ? "p-5 md:p-7" : "p-6 md:p-8"
+            }`}
           >
             <div className="flex text-volt text-sm">
               {"★".repeat(rev.rating)}
+              {rev.rating < 5 && (
+                <span className="text-ink/20">
+                  {"★".repeat(5 - rev.rating)}
+                </span>
+              )}
             </div>
             <p className="text-sm text-ink/75 font-light leading-relaxed italic">
               "{rev.text}"
@@ -59,4 +66,6 @@ export default function Reviews() {
       </div>
     </section>
   );
-}
+};
+
+export default Reviews;

@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 import { FiCheck } from "react-icons/fi";
 import BOOKS from "../data/books";
 
-export default function CategoryPage({ category, title, description }) {
+const CategoryPage = ({ category, title, description }) => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
@@ -13,7 +13,7 @@ export default function CategoryPage({ category, title, description }) {
   const handleAddToCart = (book) => {
     addToCart(book);
     setAddedId(book.id);
-    setTimeout(() => setAddedId(null), 1500);
+    setTimeout(() => setAddedId(null), 1200);
   };
 
   return (
@@ -30,26 +30,29 @@ export default function CategoryPage({ category, title, description }) {
             {description}
           </p>
           <p className="text-xs text-ink/40 font-light mt-3 uppercase tracking-wider">
-            {books.length} volumes available
+            {books.length} Books available
           </p>
         </div>
 
         {books.length === 0 ? (
           <p className="text-center py-20 text-ink/40 text-sm font-light">
-            No volumes found in this collection yet.
+            No books found in this collection yet.
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {books.map((book) => (
               <div
                 key={book.id}
-                className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col"
+                className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-300 flex flex-col"
               >
-                <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500 block">
+                <Link
+                  to={`/product/${book.id}`}
+                  className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-300 block"
+                >
                   <img
                     src={book.image}
                     alt={book.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   {book.tag && (
                     <div className="absolute top-3 left-3 bg-volt text-bone text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
@@ -101,4 +104,6 @@ export default function CategoryPage({ category, title, description }) {
       </div>
     </div>
   );
-}
+};
+
+export default CategoryPage;

@@ -7,47 +7,47 @@ import {
 } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
 
-const NAV_LINKS = [
-  { label: "Fiction", to: "/fiction" },
-  { label: "Non-Fiction", to: "/non-fiction" },
-  { label: "Poetry", to: "/poetry" },
-  { label: "Art & Design", to: "/art" },
-];
-
-export default function Navbar() {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { totalItems } = useCart();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-bone/80 backdrop-blur-md ${
-        scrolled
-          ? "border-ink/10 shadow-[0_1px_0_0_rgba(30,27,24,0.04)]"
-          : "border-ink/5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-bone/90 ${
+        scrolled ? "border-ink/10 shadow-sm" : "border-ink/5"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center shrink-0">
-          <span className="font-display text-2xl md:text-3xl text-ink tracking-wide font-bold">Boi</span>
-          <span className="font-display text-2xl md:text-3xl text-volt tracking-wide font-bold">Ghor</span>
+          <span className="font-display text-2xl md:text-3xl text-ink tracking-wide font-bold">
+            Boi
+          </span>
+          <span className="font-display text-2xl md:text-3xl text-volt tracking-wide font-bold">
+            Ghor
+          </span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
+          {[
+            { label: "Fiction", to: "/fiction" },
+            { label: "Non-Fiction", to: "/non-fiction" },
+            { label: "Poetry", to: "/poetry" },
+            { label: "About", to: "/about" },
+          ].map((link) => (
             <li key={link.label}>
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  `text-xs font-semibold uppercase tracking-wider transition-colors pb-1 ${
                     isActive
-                      ? "text-volt after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-volt after:rounded-full"
+                      ? "text-volt border-b-2 border-volt"
                       : "text-ink/60 hover:text-volt"
                   }`
                 }
@@ -65,7 +65,7 @@ export default function Navbar() {
           >
             <HiOutlineShoppingBag className="text-ink text-xl" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-volt text-bone text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-bounce">
+              <span className="absolute -top-1 -right-1 bg-volt text-bone text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
                 {totalItems}
               </span>
             )}
@@ -90,7 +90,12 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col px-5 py-4 gap-1 bg-bone">
-          {NAV_LINKS.map((link) => (
+          {[
+            { label: "Fiction", to: "/fiction" },
+            { label: "Non-Fiction", to: "/non-fiction" },
+            { label: "Poetry", to: "/poetry" },
+            { label: "About", to: "/about" },
+          ].map((link) => (
             <li key={link.label}>
               <NavLink
                 to={link.to}
@@ -109,4 +114,6 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+};
+
+export default Navbar;

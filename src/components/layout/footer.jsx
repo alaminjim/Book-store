@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FiGithub, FiTwitter, FiInstagram } from "react-icons/fi";
 
-export default function Footer() {
+const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -10,33 +10,35 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 space-y-4">
             <Link to="/" className="flex items-center">
-              <span className="font-display text-3xl text-bone tracking-wide font-bold">Boi</span>
-              <span className="font-display text-3xl text-volt tracking-wide font-bold">Ghor</span>
+              <span className="font-display text-3xl text-bone tracking-wide font-bold">
+                Boi
+              </span>
+              <span className="font-display text-3xl text-volt tracking-wide font-bold">
+                Ghor
+              </span>
             </Link>
             <p className="text-bone/60 max-w-sm text-sm font-light leading-relaxed">
-              We curate literature that inspires, challenges, and endures. Our
-              collection represents a dedication to physical craftsmanship and
-              the timeless power of written thoughts.
+              We believe a good book isn't just about the words — it's how it
+              feels in your hands. Every title we carry is hand-picked, and
+              we're pretty old-school about quality. No filler, just the good
+              stuff.
             </p>
             <div className="flex gap-4 pt-2">
               <a
                 href="#"
                 className="w-10 h-10 rounded-full border border-bone/10 flex items-center justify-center text-bone/60 hover:text-volt hover:border-volt/30 transition-all duration-300"
-                aria-label="Instagram"
               >
                 <FiInstagram className="text-base" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full border border-bone/10 flex items-center justify-center text-bone/60 hover:text-volt hover:border-volt/30 transition-all duration-300"
-                aria-label="Twitter"
+                className="w-10 h-10 rounded-full border border-bone/10 flex items-center justify-center text-bone/60 hover:text-volt hover:border-volt/30 transition-all duration-200"
               >
                 <FiTwitter className="text-base" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full border border-bone/10 flex items-center justify-center text-bone/60 hover:text-volt hover:border-volt/30 transition-all duration-300"
-                aria-label="GitHub"
+                className="w-10 h-10 rounded-lg border border-bone/10 flex items-center justify-center text-bone/60 hover:text-volt hover:border-volt/30 transition-all duration-200"
               >
                 <FiGithub className="text-base" />
               </a>
@@ -73,8 +75,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/art" className="hover:text-volt transition-colors">
-                  Art, Design & Photo
+                <Link to="/about" className="hover:text-volt transition-colors">
+                  About BoiGhor
                 </Link>
               </li>
             </ul>
@@ -110,7 +112,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-bone/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-bone/40">
-          <p>© {year} BoiGhor. All rights reserved.</p>
+          <p>© {year} BoiGhor. Made with coffee and love for books.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-bone/80 transition-colors">
               Privacy
@@ -126,4 +128,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

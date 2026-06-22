@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Newsletter() {
+const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -9,14 +9,14 @@ export default function Newsletter() {
     if (!email) return;
     setSubscribed(true);
     setEmail("");
-    setTimeout(() => setSubscribed(false), 3000);
+    setTimeout(() => setSubscribed(false), 2500);
   };
 
   return (
     <section className="max-w-7xl mx-auto px-5 md:px-8 pb-20 mt-10">
       <div className="relative bg-ink text-bone rounded-3xl p-8 md:p-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(200,90,50,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(200,90,50,0.04)_1px,transparent_1px)] bg-[size:25px_25px]" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-volt/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(transparent_0px,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100%_28px]" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-volt/5 rounded-full blur-3xl" />
 
         <div className="relative max-w-2xl space-y-6">
           <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
@@ -26,7 +26,8 @@ export default function Newsletter() {
             Subscribe to our newsletter.
           </h2>
           <p className="text-sm text-bone/60 font-light leading-relaxed max-w-lg">
-            Get weekly book recommendations, author spotlights, and updates on store events directly in your inbox.
+            Get weekly book recommendations, author spotlights, and updates on
+            store events directly in your inbox.
           </p>
 
           <form
@@ -51,11 +52,13 @@ export default function Newsletter() {
 
           {subscribed && (
             <p className="text-xs text-volt font-medium animate-fade-in pt-1">
-              Thank you. You have been added to the BoiGhor list.
+              Done! Check your inbox (and maybe spam folder).
             </p>
           )}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Newsletter;

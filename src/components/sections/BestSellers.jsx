@@ -4,17 +4,16 @@ import { useCart } from "../../context/CartContext";
 import { FiCheck } from "react-icons/fi";
 import BOOKS from "../../data/books";
 
-export default function BestSellers() {
+const BestSellers = () => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
-  // Filter 3 best-selling books (e.g. ID 5, 7, 10)
   const bestSellerBooks = BOOKS.filter((book) => [5, 7, 10].includes(book.id));
 
   const handleAddToCart = (book) => {
     addToCart(book);
     setAddedId(book.id);
-    setTimeout(() => setAddedId(null), 1500);
+    setTimeout(() => setAddedId(null), 1200);
   };
 
   return (
@@ -32,13 +31,16 @@ export default function BestSellers() {
         {bestSellerBooks.map((book) => (
           <div
             key={book.id}
-            className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col h-full"
+            className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-300 flex flex-col h-full"
           >
-            <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md block">
+            <Link
+              to={`/product/${book.id}`}
+              className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md block"
+            >
               <img
                 src={book.image}
                 alt={book.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute top-3 left-3 bg-ink text-bone text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
                 Best Seller
@@ -86,4 +88,6 @@ export default function BestSellers() {
       </div>
     </section>
   );
-}
+};
+
+export default BestSellers;

@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 import { HiOutlineShoppingBag, HiMinus, HiPlus, HiOutlineTrash } from "react-icons/hi";
 import { FiArrowLeft, FiAlertCircle } from "react-icons/fi";
 
-export default function Cart() {
+const Cart = () => {
   const { cartItems, totalPrice, totalItems, updateQuantity, removeFromCart, clearCart } = useCart();
 
   if (cartItems.length === 0) {
@@ -157,12 +157,12 @@ export default function Cart() {
                 <span className="font-display text-2xl text-volt">${totalPrice.toFixed(2)}</span>
               </div>
 
-              <button
-                onClick={() => alert("Checkout coming soon!")}
-                className="w-full bg-volt text-ink font-bold text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]"
+              <Link
+                to="/checkout"
+                className="block text-center w-full bg-volt text-ink font-bold text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]"
               >
                 Proceed to Checkout
-              </button>
+              </Link>
             </div>
 
             <div className="bg-white border border-ink/5 rounded-2xl p-5 text-center space-y-1">
@@ -176,4 +176,7 @@ export default function Cart() {
       </div>
     </div>
   );
-}
+};
+
+export default Cart;
+

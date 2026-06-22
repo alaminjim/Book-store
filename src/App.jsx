@@ -6,8 +6,10 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import CategoryPage from "./pages/CategoryPage";
 import BookDetails from "./pages/BookDetails";
+import Checkout from "./pages/Checkout";
+import About from "./pages/About";
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen bg-bone">
       <Navbar />
@@ -15,9 +17,9 @@ function Layout({ children }) {
       <Footer />
     </div>
   );
-}
+};
 
-export default function App() {
+const App = () => {
   return (
     <CartProvider>
       <BrowserRouter>
@@ -35,6 +37,22 @@ export default function App() {
             element={
               <Layout>
                 <Cart />
+              </Layout>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <Layout>
+                <Checkout />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Layout>
+                <About />
               </Layout>
             }
           />
@@ -98,4 +116,7 @@ export default function App() {
       </BrowserRouter>
     </CartProvider>
   );
-}
+};
+
+export default App;
+

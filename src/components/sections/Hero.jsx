@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-export default function Hero({ books }) {
+const Hero = ({ books }) => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
@@ -26,22 +26,25 @@ export default function Hero({ books }) {
   return (
     <section className="relative pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-          <div className="lg:col-span-7 space-y-6 md:space-y-8 animate-fade-in">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 md:space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-volt/20 bg-volt/5 text-volt text-xs font-semibold uppercase tracking-wider">
               <FiFeather className="text-sm" />
               <span>The Literary Archive</span>
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight uppercase">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-tight tracking-tight uppercase">
               Discover your <br />
-              <span className="italic font-normal text-volt font-serif normal-case">next great</span> <br />
+              <span className="italic font-normal text-volt font-serif normal-case">
+                next great
+              </span>{" "}
+              <br />
               read today.
             </h1>
 
             <p className="text-ink/75 max-w-xl text-base md:text-lg font-light leading-relaxed">
-              We handpick every book in our bookstore. From contemporary novels to poetry and design, find physical books that matter.
+              We handpick every book in our bookstore. From contemporary novels
+              to poetry and design, find physical books that matter.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -61,13 +64,13 @@ export default function Hero({ books }) {
             </div>
           </div>
 
-          <div className="lg:col-span-5 w-full flex flex-col items-center lg:items-end animate-fade-in">
+          <div className="w-full flex flex-col items-center lg:items-end animate-fade-in">
             <Swiper
               modules={[Autoplay, Pagination, EffectFade]}
               effect="fade"
               speed={600}
               autoplay={{
-                delay: 4500,
+                delay: 4000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
               }}
@@ -82,10 +85,13 @@ export default function Hero({ books }) {
               {featured.map((book) => (
                 <SwiperSlide key={book.id} className="overflow-visible pb-1">
                   <div className="relative group w-full">
-                    <div className="absolute -inset-4 bg-ink/5 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+                    <div className="absolute -inset-2 bg-ink/[0.03] rounded-3xl blur-xl group-hover:bg-ink/[0.06] transition-all duration-300" />
 
                     <div className="relative bg-sand border border-ink/5 rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-2">
-                      <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mb-6 block">
+                      <Link
+                        to={`/product/${book.id}`}
+                        className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mb-6 block"
+                      >
                         <img
                           src={book.image}
                           alt={book.title}
@@ -98,16 +104,24 @@ export default function Hero({ books }) {
 
                       <div className="space-y-2 text-left">
                         <div className="flex items-center justify-between">
-                          <span className="text-[10px] uppercase tracking-widest text-ink/50 font-bold">{book.category}</span>
-                          <span className="font-display text-lg font-bold text-volt">${book.price.toFixed(2)}</span>
+                          <span className="text-[10px] uppercase tracking-widest text-ink/50 font-bold">
+                            {book.category}
+                          </span>
+                          <span className="font-display text-lg font-bold text-volt">
+                            ${book.price.toFixed(2)}
+                          </span>
                         </div>
                         <Link to={`/product/${book.id}`}>
-                          <h3 className="font-display text-xl font-bold uppercase leading-tight hover:text-volt transition-colors">{book.title}</h3>
+                          <h3 className="font-display text-xl font-bold uppercase leading-tight hover:text-volt transition-colors">
+                            {book.title}
+                          </h3>
                         </Link>
-                        <p className="text-xs text-ink/60 font-light line-clamp-2">{book.desc}</p>
+                        <p className="text-xs text-ink/60 font-light line-clamp-2">
+                          {book.desc}
+                        </p>
                         <button
                           onClick={() => handleAddToCart(book)}
-                          className="w-full mt-4 bg-ink text-bone py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-volt hover:text-ink transition-colors flex items-center justify-center gap-1.5 animate-fade-in"
+                          className="w-full mt-4 bg-ink text-bone py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-volt hover:text-ink transition-colors flex items-center justify-center gap-1.5"
                         >
                           {addedId === book.id ? (
                             <>
@@ -127,10 +141,10 @@ export default function Hero({ books }) {
 
             <div className="hero-swiper-pagination flex justify-center gap-2 mt-6 w-full max-w-xs sm:max-w-sm"></div>
           </div>
-
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default Hero;

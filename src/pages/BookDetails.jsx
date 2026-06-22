@@ -6,7 +6,7 @@ import { FiArrowLeft, FiCheck, FiShoppingBag, FiInfo } from "react-icons/fi";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import BOOKS from "../data/books";
 
-export default function BookDetails() {
+const BookDetails = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -62,7 +62,7 @@ export default function BookDetails() {
   const handleAddToCart = () => {
     addToCart(book, quantity);
     setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
+    setTimeout(() => setAdded(false), 1800);
   };
 
   const handleQtyChange = (val) => {
@@ -83,8 +83,8 @@ export default function BookDetails() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-          <div className="lg:col-span-6 space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <div className="space-y-4">
             <div className="relative aspect-[3/4] bg-sand border border-ink/5 rounded-2xl overflow-hidden shadow-md">
               <img
                 src={activeImage || book.image}
@@ -119,7 +119,7 @@ export default function BookDetails() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-6 md:py-4">
+          <div className="space-y-6 md:py-4">
             <div>
               <span className="text-[10px] font-bold uppercase tracking-widest text-volt bg-volt/5 px-2.5 py-1 rounded">
                 {book.category.replace("-", " ")}
@@ -213,13 +213,13 @@ export default function BookDetails() {
                 <Link
                   key={relatedBook.id}
                   to={`/product/${relatedBook.id}`}
-                  className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col"
+                  className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-300 flex flex-col"
                 >
                   <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md">
                     <img
                       src={relatedBook.image}
                       alt={relatedBook.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="flex flex-col flex-grow space-y-1">
@@ -244,4 +244,6 @@ export default function BookDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default BookDetails;

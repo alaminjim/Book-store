@@ -1,30 +1,34 @@
 import { Link } from "react-router-dom";
 
-export default function FeaturedCategories() {
+const FeaturedCategories = () => {
   const categories = [
     {
       title: "Fiction",
-      desc: "Imaginative stories, novels, and literature.",
+      desc: "Novels and stories that keep you up at night.",
       path: "/fiction",
       bg: "bg-sand/30",
+      cta: "Browse Fiction →",
     },
     {
       title: "Non-Fiction",
-      desc: "Intellectual essays, history, and real ideas.",
+      desc: "Real stories, real ideas. Essays, history, memoirs — stuff that makes you think.",
       path: "/non-fiction",
       bg: "bg-sand/30",
+      cta: "Explore Collection →",
     },
     {
       title: "Poetry",
-      desc: "Verse, contemporary drama, and short prose.",
+      desc: "Verse and drama.",
       path: "/poetry",
       bg: "bg-sand/30",
+      cta: "View Poems →",
     },
     {
       title: "Art & Design",
-      desc: "Monographs, visuals, and architecture.",
+      desc: "Visual books, monographs, architecture, and photography from around the world.",
       path: "/art",
       bg: "bg-sand/30",
+      cta: "Discover Art →",
     },
   ];
 
@@ -53,11 +57,13 @@ export default function FeaturedCategories() {
               {cat.desc}
             </p>
             <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
-              Explore Collection →
+              {cat.cta}
             </span>
           </Link>
         ))}
       </div>
     </section>
   );
-}
+};
+
+export default FeaturedCategories;

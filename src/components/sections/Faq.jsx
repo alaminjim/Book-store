@@ -1,23 +1,27 @@
 import { useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi";
 
-export default function Faq() {
+const Faq = () => {
   const faqs = [
     {
       question: "How long does shipping take?",
-      answer: "We usually dispatch orders within 2-3 business days. Shipping normally takes 5-7 business days depending on your location.",
+      answer:
+        "Usually 5-7 business days after dispatch. We process orders within 2-3 days.",
     },
     {
       question: "Do you ship internationally?",
-      answer: "Yes, we ship to most countries worldwide. Free shipping is automatically applied to all orders.",
+      answer:
+        "Yes, we ship worldwide. Free shipping on all orders — no minimum, no catch.",
     },
     {
       question: "Can I return a book if I change my mind?",
-      answer: "Yes, we accept returns within 14 days of delivery. The books must be in their original condition.",
+      answer:
+        "Absolutely. You have 14 days from delivery to return any book. Just make sure it's in original condition with no markings or damage. We'll process the refund once we receive it.",
     },
     {
       question: "How do I contact customer support?",
-      answer: "You can email us at support@boighor.com. We usually respond within 24 hours.",
+      answer:
+        "Drop us an email at support@boighor.com. We try to respond within 24 hours, but usually it's much faster.",
     },
   ];
 
@@ -41,8 +45,8 @@ export default function Faq() {
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div
-            key={index}
-            className="bg-white border border-ink/5 rounded-2xl overflow-hidden transition-all duration-300"
+            key={faq.question}
+            className="bg-white border border-ink/5 rounded-2xl overflow-hidden transition-all duration-200"
           >
             <button
               onClick={() => toggleFaq(index)}
@@ -50,13 +54,19 @@ export default function Faq() {
             >
               <span>{faq.question}</span>
               <span className="shrink-0 ml-4 text-volt">
-                {activeIndex === index ? <HiMinus className="text-sm" /> : <HiPlus className="text-sm" />}
+                {activeIndex === index ? (
+                  <HiMinus className="text-sm" />
+                ) : (
+                  <HiPlus className="text-sm" />
+                )}
               </span>
             </button>
 
             <div
-              className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                activeIndex === index ? "max-h-40 border-t border-ink/5" : "max-h-0"
+              className={`transition-all duration-200 overflow-hidden ${
+                activeIndex === index
+                  ? "max-h-48 border-t border-ink/5"
+                  : "max-h-0"
               }`}
             >
               <p className="p-6 text-xs sm:text-sm text-ink/75 font-light leading-relaxed">
@@ -68,4 +78,6 @@ export default function Faq() {
       </div>
     </section>
   );
-}
+};
+
+export default Faq;

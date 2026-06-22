@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { FiCheck } from "react-icons/fi";
 import BOOKS from "../data/books";
-
 import Hero from "../components/sections/Hero";
 import FeaturedCategories from "../components/sections/FeaturedCategories";
 import BestSellers from "../components/sections/BestSellers";
@@ -14,17 +13,16 @@ import Faq from "../components/sections/Faq";
 import Philosophy from "../components/sections/Philosophy";
 import Newsletter from "../components/sections/Newsletter";
 
-export default function Home() {
+const Home = () => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
-  // We show 3 featured books for the "Featured Products" section (IDs: 1, 3, 9)
   const featuredProducts = BOOKS.filter((book) => [1, 3, 9].includes(book.id));
 
   const handleAddToCart = (book) => {
     addToCart(book);
     setAddedId(book.id);
-    setTimeout(() => setAddedId(null), 1500);
+    setTimeout(() => setAddedId(null), 1200);
   };
 
   return (
@@ -70,13 +68,16 @@ export default function Home() {
           {featuredProducts.map((book) => (
             <div
               key={book.id}
-              className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-500 flex flex-col h-full"
+              className="group bg-white border border-ink/5 rounded-2xl p-5 hover:shadow-xl hover:border-volt/20 transition-all duration-300 flex flex-col h-full"
             >
-              <Link to={`/product/${book.id}`} className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-500 block">
+              <Link
+                to={`/product/${book.id}`}
+                className="relative aspect-[3/4] rounded-lg overflow-hidden bg-sand mb-5 shadow-md group-hover:shadow-xl transition-all duration-300 block"
+              >
                 <img
                   src={book.image}
                   alt={book.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 {book.tag && (
                   <div className="absolute top-3 left-3 bg-volt text-bone text-[9px] font-bold px-2 py-1 uppercase tracking-wider rounded">
@@ -141,4 +142,6 @@ export default function Home() {
       <Newsletter />
     </div>
   );
-}
+};
+
+export default Home;
