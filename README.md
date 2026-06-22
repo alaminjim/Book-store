@@ -8,9 +8,7 @@ Rather than utilizing a generic template or a predefined component library, BoiG
 
 ## Live Demo & Repository
 
-- **GitHub Repository**: `https://github.com/YOUR_USERNAME/bookStore` _(Replace with your actual repo)_
-- **Live Deployment (Netlify)**: `https://YOUR_SUBDOMAIN.netlify.app` _(Replace with your live URL)_
-
+- **Live Deployment (Netlify)**: https://boi-ghor-3.netlify.app
 ---
 
 ## Tech Stack & Libraries
