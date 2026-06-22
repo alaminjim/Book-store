@@ -39,8 +39,8 @@ const Checkout = () => {
               Order Confirmed
             </h1>
             <p className="text-sm text-ink/60 font-light leading-relaxed">
-              Thanks for your order! We'll pack your books with care and send
-              you a tracking link within 24 hours.
+              Your order has been placed successfully. We will contact you soon
+              regarding delivery.
             </p>
           </div>
           <div className="pt-2">
@@ -48,7 +48,7 @@ const Checkout = () => {
               to="/"
               className="inline-flex items-center gap-2 bg-ink hover:bg-volt text-bone hover:text-ink px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300"
             >
-              <span>Back to Archive</span>
+              <span>Continue Shopping</span>
             </Link>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Checkout = () => {
       <div className="bg-bone min-h-screen pt-24 pb-20 px-5 md:px-8 flex items-center justify-center">
         <div className="text-center max-w-md space-y-6">
           <h1 className="font-display text-3xl uppercase tracking-wide">
-            Checkout is empty
+            Your Cart is Empty
           </h1>
           <p className="text-sm text-ink/65 font-light">
             You don't have any items in your cart to checkout.
@@ -222,20 +222,36 @@ const Checkout = () => {
                 </div>
                 <div className="space-y-2">
                   <label
-                    htmlFor="country"
+                    htmlFor="district"
                     className="text-[10px] font-bold uppercase tracking-widest text-ink/50"
                   >
-                    Country
+                    District
                   </label>
                   <select
-                    id="country"
-                    defaultValue="Bangladesh"
+                    id="district"
+                    name="district"
+                    defaultValue=""
                     className="w-full bg-bone border border-ink/10 focus:border-volt/50 rounded-xl px-4 py-3 text-sm font-light focus:outline-none transition-colors"
                   >
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United States">United States</option>
-                    <option value="Germany">Germany</option>
+                    <option value="" disabled>
+                      Select District
+                    </option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Chattogram">Chattogram</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Barishal">Barishal</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Mymensingh">Mymensingh</option>
+                    <option value="Naogaon">Naogaon</option>
+                    <option value="Bogura">Bogura</option>
+                    <option value="Natore">Natore</option>
+                    <option value="Pabna">Pabna</option>
+                    <option value="Cumilla">Cumilla</option>
+                    <option value="Noakhali">Noakhali</option>
+                    <option value="Jessore">Jashore</option>
+                    <option value="Cox's Bazar">Cox's Bazar</option>
                   </select>
                 </div>
               </div>
@@ -357,11 +373,11 @@ const Checkout = () => {
 
             <div className="bg-white border border-ink/5 rounded-2xl p-5 text-center space-y-1">
               <p className="text-[10px] font-bold uppercase tracking-wider text-ink/50">
-                Archival Packaging
+                Delivery Information
               </p>
               <p className="text-[10px] text-ink/35 font-light">
-                All books are packed in heavy-duty cardboard sleeves with custom
-                acid-free wrapping paper.
+                Orders are usually delivered within 2-5 business days across
+                Bangladesh.
               </p>
             </div>
           </div>

@@ -1,30 +1,30 @@
 import { useState } from "react";
 import { HiMinus, HiPlus } from "react-icons/hi";
 
-const Faq = () => {
-  const faqs = [
-    {
-      question: "How long does shipping take?",
-      answer:
-        "Usually 5-7 business days after dispatch. We process orders within 2-3 days.",
-    },
-    {
-      question: "Do you ship internationally?",
-      answer:
-        "Yes, we ship worldwide. Free shipping on all orders — no minimum, no catch.",
-    },
-    {
-      question: "Can I return a book if I change my mind?",
-      answer:
-        "Absolutely. You have 14 days from delivery to return any book. Just make sure it's in original condition with no markings or damage. We'll process the refund once we receive it.",
-    },
-    {
-      question: "How do I contact customer support?",
-      answer:
-        "Drop us an email at support@boighor.com. We try to respond within 24 hours, but usually it's much faster.",
-    },
-  ];
+const faqs = [
+  {
+    question: "How long does shipping take?",
+    answer:
+      "Usually 5-7 business days after dispatch. We process orders within 2-3 days.",
+  },
+  {
+    question: "Do you ship internationally?",
+    answer:
+      "Yes, we ship worldwide. Free shipping on all orders — no minimum, no catch.",
+  },
+  {
+    question: "Can I return a book if I change my mind?",
+    answer:
+      "Absolutely. You have 14 days from delivery to return any book. Just make sure it's in original condition with no markings or damage. We'll process the refund once we receive it.",
+  },
+  {
+    question: "How do I contact customer support?",
+    answer:
+      "Drop us an email at support@boighor.com. We're a small team so it might take a day, but we always get back to you.",
+  },
+];
 
+const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFaq = (index) => {

@@ -8,7 +8,7 @@ const AuthorSpotlight = () => {
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl bg-sand">
             <img
               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"
-              alt="Al Amin Islam"
+              alt="Mehzabin Rahman"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
             <div className="absolute bottom-4 left-4 bg-ink/80 backdrop-blur-sm text-bone px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider">
@@ -22,12 +22,13 @@ const AuthorSpotlight = () => {
             Writer in Focus
           </span>
           <h2 className="font-display text-4xl uppercase tracking-wide">
-            Al Amin Islam
+            Mehzabin Rahman
           </h2>
           <p className="text-sm text-ink/75 font-light leading-relaxed">
-            Al Amin Islam is a novelist based in Prague. Her latest book,{" "}
+            Mehzabin Rahman writes out of Prague these days, though most of her
+            stories still circle back to home. Her latest,{" "}
             <em className="font-serif italic font-medium">The Silent Echo</em>,
-            is currently a staff favorite at BoiGhor.
+            has been a quiet favorite around the store since it came in.
           </p>
           <blockquote className="border-l-2 border-volt pl-4 italic text-sm text-ink/65 font-light">
             "Writing is a way of asking questions that don't always have easy
@@ -38,7 +39,7 @@ const AuthorSpotlight = () => {
               to="/fiction"
               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-volt hover:text-ink transition-colors"
             >
-              <span>Explore alamin's Work</span>
+              <span>Explore Her Work</span>
               <span>→</span>
             </Link>
           </div>

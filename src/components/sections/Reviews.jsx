@@ -1,28 +1,28 @@
-const Reviews = () => {
-  const reviews = [
-    {
-      id: 1,
-      name: "Henry Cavil",
-      role: "Verified Reader",
-      text: "The selection here is exquisite. I bought Forms of Space and the binding quality is top-notch. Highly recommended for collectors.",
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "Sophia Loren",
-      role: "Literature Professor",
-      text: "BoiGhor is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. My books arrived in perfect condition, wrapped with care. Rare to find this level of attention.",
-      rating: 4.5,
-    },
-    {
-      id: 3,
-      name: "David Kim",
-      role: "Design Lead",
-      text: "Beautiful website, quick checkout. Will order again.",
-      rating: 4,
-    },
-  ];
+const reviews = [
+  {
+    id: 1,
+    name: "Rafiq Ahmed",
+    role: "Verified Reader",
+    text: "The selection here is exquisite. I bought Forms of Space and the binding quality is top-notch. Highly recommended for collectors.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Nasrin Chowdhury",
+    role: "Literature Professor",
+    text: "BoiGhor is a sanctuary for serious readers. Their curation avoids mainstream algorithms and brings forward actual substance. My books arrived in perfect condition, wrapped with care. Rare to find this level of attention.",
+    rating: 4.5,
+  },
+  {
+    id: 3,
+    name: "David Kim",
+    role: "Design Lead",
+    text: "Beautiful website, quick checkout. Will order again.",
+    rating: 4,
+  },
+];
 
+const Reviews = () => {
   return (
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16 border-t border-ink/5">
       <div className="mb-12 text-center">

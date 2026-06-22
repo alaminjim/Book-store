@@ -44,6 +44,7 @@ const Philosophy = () => {
             </p>
           </div>
 
+          {/* slightly tighter padding here, fits better with the icon size — leaving as is */}
           <div className="bg-bone border border-ink/5 rounded-2xl p-5 space-y-4 hover:border-volt/30 transition-colors">
             <div className="w-10 h-10 rounded-xl bg-volt/10 text-volt flex items-center justify-center">
               <FiFeather className="text-lg" />

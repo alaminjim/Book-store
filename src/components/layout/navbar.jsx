@@ -7,16 +7,27 @@ import {
 } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
 
+const navLinks = [
+  { label: "Fiction", to: "/fiction" },
+  { label: "Non-Fiction", to: "/non-fiction" },
+  { label: "Poetry", to: "/poetry" },
+  { label: "About", to: "/about" },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { totalItems } = useCart();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header
@@ -35,13 +46,8 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden lg:flex items-center gap-8">
-          {[
-            { label: "Fiction", to: "/fiction" },
-            { label: "Non-Fiction", to: "/non-fiction" },
-            { label: "Poetry", to: "/poetry" },
-            { label: "About", to: "/about" },
-          ].map((link) => (
-            <li key={link.label}>
+          {navLinks.map((link) => (
+            <li key={link.to}>
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
@@ -73,7 +79,8 @@ const Navbar = () => {
 
           <button
             className="lg:hidden flex items-center justify-center w-10 h-10 text-ink"
-            onClick={() => setMenuOpen((o) => !o)}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
           >
             {menuOpen ? (
               <HiOutlineX className="text-2xl" />
@@ -90,16 +97,11 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col px-5 py-4 gap-1 bg-bone">
-          {[
-            { label: "Fiction", to: "/fiction" },
-            { label: "Non-Fiction", to: "/non-fiction" },
-            { label: "Poetry", to: "/poetry" },
-            { label: "About", to: "/about" },
-          ].map((link) => (
-            <li key={link.label}>
+          {navLinks.map((link) => (
+            <li key={link.to}>
               <NavLink
                 to={link.to}
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className={({ isActive }) =>
                   `block py-3 uppercase text-xs font-semibold tracking-wider border-b border-ink/5 transition-colors ${
                     isActive ? "text-volt" : "text-ink/80 hover:text-volt"

@@ -1,4 +1,5 @@
-/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/set-state-in-effect -- syncing activeImage to the route param, can't avoid this easily */
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
@@ -11,9 +12,12 @@ const BookDetails = () => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
+  const [activeImage, setActiveImage] = useState("");
 
   const book = BOOKS.find((b) => b.id === parseInt(id));
 
+  // second and third gallery images are just placeholders until we get
+  // real alternate angles from the publisher
   const galleryImages = book
     ? [
         book.image,
@@ -21,8 +25,6 @@ const BookDetails = () => {
         "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=500&q=80",
       ]
     : [];
-
-  const [activeImage, setActiveImage] = useState("");
 
   useEffect(() => {
     if (book) {
@@ -101,7 +103,7 @@ const BookDetails = () => {
             <div className="grid grid-cols-3 gap-4">
               {galleryImages.map((img, idx) => (
                 <button
-                  key={idx}
+                  key={img}
                   onClick={() => setActiveImage(img)}
                   className={`aspect-[3/4] rounded-xl overflow-hidden bg-sand border transition-all ${
                     activeImage === img

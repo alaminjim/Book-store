@@ -13,7 +13,7 @@ const CategoryPage = ({ category, title, description }) => {
   const handleAddToCart = (book) => {
     addToCart(book);
     setAddedId(book.id);
-    setTimeout(() => setAddedId(null), 1200);
+    setTimeout(() => setAddedId(null), 1500);
   };
 
   return (

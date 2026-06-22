@@ -1,4 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-refresh/only-export-components -- keeping provider + hook together, splitting felt like overkill for this */
 import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
@@ -22,7 +22,9 @@ export const CartProvider = ({ children }) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + qty } : item
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + qty }
+            : item,
         );
       }
       return [...prev, { ...product, quantity: qty }];
@@ -75,4 +77,3 @@ export const useCart = () => {
   if (!context) throw new Error("useCart must be used within a CartProvider");
   return context;
 };
-

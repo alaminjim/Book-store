@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-import { HiOutlineShoppingBag, HiMinus, HiPlus, HiOutlineTrash } from "react-icons/hi";
+import {
+  HiOutlineShoppingBag,
+  HiMinus,
+  HiPlus,
+  HiOutlineTrash,
+} from "react-icons/hi";
 import { FiArrowLeft, FiAlertCircle } from "react-icons/fi";
 
 const Cart = () => {
-  const { cartItems, totalPrice, totalItems, updateQuantity, removeFromCart, clearCart } = useCart();
+  const {
+    cartItems,
+    totalPrice,
+    totalItems,
+    updateQuantity,
+    removeFromCart,
+    clearCart,
+  } = useCart();
 
   if (cartItems.length === 0) {
     return (
@@ -14,9 +26,12 @@ const Cart = () => {
             <HiOutlineShoppingBag className="text-4xl text-ink/30" />
           </div>
           <div>
-            <h1 className="font-display text-3xl uppercase tracking-wide mb-2">Your cart is empty</h1>
+            <h1 className="font-display text-3xl uppercase tracking-wide mb-2">
+              Your cart is empty
+            </h1>
             <p className="text-sm text-ink/55 font-light leading-relaxed">
-              You haven't added any volumes yet. Browse our curated catalog and discover exceptional literature.
+              You haven't added any volumes yet. Browse our curated catalog and
+              discover exceptional literature.
             </p>
           </div>
           <Link
@@ -36,8 +51,12 @@ const Cart = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-10">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-widest text-volt">Your Selection</span>
-            <h1 className="font-display text-4xl md:text-5xl uppercase tracking-tight mt-1">Reading Cart</h1>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-volt">
+              Your Selection
+            </span>
+            <h1 className="font-display text-4xl md:text-5xl uppercase tracking-tight mt-1">
+              Reading Cart
+            </h1>
           </div>
           <button
             onClick={clearCart}
@@ -61,7 +80,11 @@ const Cart = () => {
               >
                 <div className="w-16 h-20 shrink-0 rounded-lg overflow-hidden shadow-md bg-sand border border-ink/5">
                   {item.image ? (
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <HiOutlineShoppingBag className="text-ink/25 text-xl" />
@@ -70,10 +93,18 @@ const Cart = () => {
                 </div>
 
                 <div className="flex-grow space-y-1">
-                  <p className="text-[10px] uppercase tracking-widest text-ink/40 font-bold">{item.category}</p>
-                  <h3 className="font-display text-lg uppercase font-bold leading-tight">{item.title}</h3>
-                  <p className="text-xs text-ink/50 italic font-light">by {item.author}</p>
-                  <p className="text-sm font-bold text-volt pt-1">${item.price.toFixed(2)} each</p>
+                  <p className="text-[10px] uppercase tracking-widest text-ink/40 font-bold">
+                    {item.category}
+                  </p>
+                  <h3 className="font-display text-lg uppercase font-bold leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-ink/50 italic font-light">
+                    by {item.author}
+                  </p>
+                  <p className="text-sm font-bold text-volt pt-1">
+                    ${item.price.toFixed(2)} each
+                  </p>
                 </div>
 
                 <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-between gap-4 shrink-0">
@@ -120,6 +151,7 @@ const Cart = () => {
             </div>
           </div>
 
+          {/* order summary, sticky so it stays visible while scrolling through items */}
           <div className="sticky top-24 space-y-4">
             <div className="bg-ink text-bone rounded-2xl p-6 md:p-8">
               <h2 className="font-display text-xl uppercase tracking-wider pb-4 border-b border-bone/10 mb-6">
@@ -128,8 +160,13 @@ const Cart = () => {
 
               <div className="space-y-3 mb-6">
                 {cartItems.map((item) => (
-                  <div key={item.id} className="flex justify-between text-xs text-bone/55 font-light">
-                    <span className="truncate pr-4">{item.title} × {item.quantity}</span>
+                  <div
+                    key={item.id}
+                    className="flex justify-between text-xs text-bone/55 font-light"
+                  >
+                    <span className="truncate pr-4">
+                      {item.title} × {item.quantity}
+                    </span>
                     <span className="shrink-0 font-medium text-bone/80">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
@@ -139,8 +176,12 @@ const Cart = () => {
 
               <div className="space-y-3 text-xs border-t border-bone/10 pt-4 mb-6">
                 <div className="flex justify-between text-bone/60">
-                  <span>Subtotal ({totalItems} item{totalItems !== 1 ? "s" : ""})</span>
-                  <span className="font-bold text-bone">${totalPrice.toFixed(2)}</span>
+                  <span>
+                    Subtotal ({totalItems} item{totalItems !== 1 ? "s" : ""})
+                  </span>
+                  <span className="font-bold text-bone">
+                    ${totalPrice.toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex justify-between text-bone/60">
                   <span>Shipping</span>
@@ -154,7 +195,9 @@ const Cart = () => {
 
               <div className="flex justify-between items-center border-t border-bone/10 pt-4 mb-8">
                 <span className="text-sm font-bold">Total</span>
-                <span className="font-display text-2xl text-volt">${totalPrice.toFixed(2)}</span>
+                <span className="font-display text-2xl text-volt">
+                  ${totalPrice.toFixed(2)}
+                </span>
               </div>
 
               <Link
@@ -166,9 +209,12 @@ const Cart = () => {
             </div>
 
             <div className="bg-white border border-ink/5 rounded-2xl p-5 text-center space-y-1">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-ink/50">Free worldwide shipping</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-ink/50">
+                Free worldwide shipping
+              </p>
               <p className="text-[10px] text-ink/35 font-light">
-                Orders dispatched within 2–3 business days in archival packaging.
+                Orders dispatched within 2–3 business days in archival
+                packaging.
               </p>
             </div>
           </div>
@@ -179,4 +225,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

@@ -4,16 +4,21 @@ import { useCart } from "../../context/CartContext";
 import { FiCheck } from "react-icons/fi";
 import BOOKS from "../../data/books";
 
+// ids picked manually for now, will wire this up to actual sales data later
+const BEST_SELLER_IDS = [5, 7, 10];
+
 const BestSellers = () => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
-  const bestSellerBooks = BOOKS.filter((book) => [5, 7, 10].includes(book.id));
+  const bestSellerBooks = BOOKS.filter((book) =>
+    BEST_SELLER_IDS.includes(book.id),
+  );
 
   const handleAddToCart = (book) => {
     addToCart(book);
     setAddedId(book.id);
-    setTimeout(() => setAddedId(null), 1200);
+    setTimeout(() => setAddedId(null), 1500);
   };
 
   return (

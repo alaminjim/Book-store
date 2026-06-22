@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import {
   FiArrowRight,
@@ -7,61 +8,61 @@ import {
   FiPackage,
 } from "react-icons/fi";
 
+const team = [
+  {
+    name: "Elena Rostova",
+    role: "Founder & Head Curator",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    bio: "A lifelong reader and former literary editor, Elena started BoiGhor to preserve the tradition of independent bookselling.",
+  },
+  {
+    name: "Julian Vance",
+    role: "Poetry & Arts Editor",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    bio: "Julian brings over a decade of experience in literary criticism and runs our poetry and fine arts division.",
+  },
+  {
+    name: "Amara Diallo",
+    role: "Customer Experience Lead",
+    image:
+      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
+    bio: "Amara ensures every reader's journey — from browsing to delivery — feels thoughtful and personal.",
+  },
+];
+
+const values = [
+  {
+    icon: <FiBookOpen />,
+    title: "Human Curation",
+    desc: "Every single book is hand-selected and read by our editorial team. No algorithms. No trends-chasing.",
+  },
+  {
+    icon: <FiFeather />,
+    title: "Literary Integrity",
+    desc: "We champion writers whose voices deserve attention — not just bestseller lists.",
+  },
+  {
+    icon: <FiPackage />,
+    title: "Archival Packaging",
+    desc: "Every order ships in acid-free tissue and custom cardboard sleeves. Books deserve care.",
+  },
+  {
+    icon: <FiHeart />,
+    title: "Community First",
+    desc: "A portion of every sale goes toward supporting local libraries and independent writers.",
+  },
+];
+
+const stats = [
+  { value: "1,200+", label: "Books Curated" },
+  { value: "48", label: "Countries Served" },
+  { value: "12,000+", label: "Happy Readers" },
+  { value: "7", label: "Years in Print" },
+];
+
 const About = () => {
-  const team = [
-    {
-      name: "Elena Rostova",
-      role: "Founder & Head Curator",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-      bio: "A lifelong reader and former literary editor, Elena started BoiGhor to preserve the tradition of independent bookselling.",
-    },
-    {
-      name: "Julian Vance",
-      role: "Poetry & Arts Editor",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-      bio: "Julian brings over a decade of experience in literary criticism and runs our poetry and fine arts division.",
-    },
-    {
-      name: "Amara Diallo",
-      role: "Customer Experience Lead",
-      image:
-        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=400&q=80",
-      bio: "Amara ensures every reader's journey — from browsing to delivery — feels thoughtful and personal.",
-    },
-  ];
-
-  const values = [
-    {
-      icon: <FiBookOpen />,
-      title: "Human Curation",
-      desc: "Every single book is hand-selected and read by our editorial team. No algorithms. No trends-chasing.",
-    },
-    {
-      icon: <FiFeather />,
-      title: "Literary Integrity",
-      desc: "We champion writers whose voices deserve attention — not just bestseller lists.",
-    },
-    {
-      icon: <FiPackage />,
-      title: "Archival Packaging",
-      desc: "Every order ships in acid-free tissue and custom cardboard sleeves. Books deserve care.",
-    },
-    {
-      icon: <FiHeart />,
-      title: "Community First",
-      desc: "A portion of every sale goes toward supporting local libraries and independent writers.",
-    },
-  ];
-
-  const stats = [
-    { value: "1,200+", label: "Books Curated" },
-    { value: "48", label: "Countries Served" },
-    { value: "12,000+", label: "Happy Readers" },
-    { value: "7", label: "Years in Print" },
-  ];
-
   return (
     <div className="bg-bone text-ink min-h-screen">
       <section className="pt-32 pb-20 md:pb-28 border-b border-ink/5">
@@ -98,7 +99,7 @@ const About = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, i) => (
               <div
-                key={i}
+                key={stat.label}
                 className="py-12 px-6 text-center border-r border-ink/5 last:border-r-0 even:border-r-0 lg:even:border-r"
               >
                 <div className="font-display text-4xl md:text-5xl font-bold text-volt mb-2">
@@ -173,7 +174,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((val, i) => (
               <div
-                key={i}
+                key={val.title}
                 className={`bg-bone border border-ink/5 rounded-2xl space-y-4 hover:border-volt/30 transition-colors ${
                   i % 2 === 0 ? "p-6" : "p-5"
                 }`}
@@ -213,7 +214,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, i) => (
-              <div key={i} className="group">
+              <div key={member.name} className="group">
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-sand mb-5">
                   <img
                     src={member.image}

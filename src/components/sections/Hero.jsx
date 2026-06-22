@@ -5,7 +5,6 @@ import { FiArrowRight, FiFeather, FiCheck } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import BOOKS from "../../data/books";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
@@ -14,6 +13,7 @@ const Hero = ({ books }) => {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState(null);
 
+  // fallback to first 4 books if nothing's passed in from the parent
   const featured = books && books.length > 0 ? books : BOOKS.slice(0, 4);
 
   const handleAddToCart = (book) => {
@@ -139,6 +139,7 @@ const Hero = ({ books }) => {
               ))}
             </Swiper>
 
+            {/* swiper needs this empty div to mount its own pagination bullets into */}
             <div className="hero-swiper-pagination flex justify-center gap-2 mt-6 w-full max-w-xs sm:max-w-sm"></div>
           </div>
         </div>

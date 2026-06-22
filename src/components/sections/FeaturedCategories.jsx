@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom";
 
-const FeaturedCategories = () => {
-  const categories = [
-    {
-      title: "Fiction",
-      desc: "Novels and stories that keep you up at night.",
-      path: "/fiction",
-      bg: "bg-sand/30",
-      cta: "Browse Fiction →",
-    },
-    {
-      title: "Non-Fiction",
-      desc: "Real stories, real ideas. Essays, history, memoirs — stuff that makes you think.",
-      path: "/non-fiction",
-      bg: "bg-sand/30",
-      cta: "Explore Collection →",
-    },
-    {
-      title: "Poetry",
-      desc: "Verse and drama.",
-      path: "/poetry",
-      bg: "bg-sand/30",
-      cta: "View Poems →",
-    },
-    {
-      title: "Art & Design",
-      desc: "Visual books, monographs, architecture, and photography from around the world.",
-      path: "/art",
-      bg: "bg-sand/30",
-      cta: "Discover Art →",
-    },
-  ];
+const categories = [
+  {
+    title: "Fiction",
+    desc: "Novels and stories that keep you up at night.",
+    path: "/fiction",
+    bg: "bg-sand/30",
+    cta: "Browse Fiction →",
+  },
+  {
+    title: "Non-Fiction",
+    desc: "Real stories, real ideas. Essays, history, memoirs — stuff that makes you think.",
+    path: "/non-fiction",
+    bg: "bg-sand/40",
+    cta: "Explore Collection →",
+  },
+  {
+    title: "Poetry",
+    desc: "Verse and drama.",
+    path: "/poetry",
+    bg: "bg-sand/30",
+    cta: "View Poems →",
+  },
+  {
+    title: "Art & Design",
+    desc: "Visual books, monographs, architecture, and photography from around the world.",
+    path: "/art",
+    bg: "bg-sand/40",
+    cta: "Discover Art →",
+  },
+];
 
+const FeaturedCategories = () => {
   return (
     <section className="max-w-7xl mx-auto px-5 md:px-8 py-16">
       <div className="mb-10 text-center md:text-left">
@@ -46,7 +46,7 @@ const FeaturedCategories = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map((cat) => (
           <Link
-            key={cat.title}
+            key={cat.path}
             to={cat.path}
             className={`block p-8 rounded-2xl border border-ink/5 hover:border-volt/30 hover:shadow-lg transition-all duration-300 ${cat.bg}`}
           >

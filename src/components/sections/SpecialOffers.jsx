@@ -12,9 +12,8 @@ const SpecialOffers = () => {
             Buy More, Save More
           </h2>
           <p className="text-xs md:text-sm font-medium opacity-80 leading-relaxed">
-            Add any 3 books to your cart and receive a complimentary leather
-            bookmark and free priority shipping worldwide. No coupon code
-            required.
+            Grab any 3 books and we'll throw in a leather bookmark plus free
+            priority shipping, anywhere. Nothing to enter, it just applies.
           </p>
         </div>
 
